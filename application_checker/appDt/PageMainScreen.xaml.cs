@@ -25,7 +25,7 @@ namespace application_checker.appDt
         {
             InitializeComponent();
             ClassDataUpdate classDataUpdate = new ClassDataUpdate();
-            classDataUpdate.LoadDataInGrid(GridListProcess);
+            classDataUpdate.LoadDataInGrid(GridListProcess);            
         }
 
     }

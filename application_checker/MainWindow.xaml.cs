@@ -1,5 +1,6 @@
 ﻿using application_checker.appCls;
 using application_checker.appDt;
+using application_checker.appDt.funcDataMainPage;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -32,8 +33,8 @@ namespace application_checker
             InitializeComponent();
             TxbNameUser.Text = Environment.UserName + " / Сборка ОС: " + Environment.Version + " / Версия ОС: " + Environment.OSVersion;
             TxbHeaderWindow.Text = "Checker ENV" + " .::. " + Environment.SystemDirectory;
-            DataTimer();
             NavigationPages.frameMainPage = FrmMainPages;
+            FrmMainPages.Navigate(new PageMainScreen());
         }
 
         private void StcPanel_MouseDown(object sender, MouseButtonEventArgs e)
@@ -69,16 +70,5 @@ namespace application_checker
             }
         }
 
-        private void DataTimer() {
-            timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(10);
-            timer.Tick += UpdateDataGrid;
-            timer.Start();
-        }
-
-        private void UpdateDataGrid(object sender, EventArgs e)
-        {
-            FrmMainPages.Navigate(new PageMainScreen());                
-        }
     }
 }
