@@ -1,0 +1,88 @@
+﻿<Window x:Class="application_checker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:application_checker"
+        mc:Ignorable="d"
+        WindowStyle="None"        
+        Title="MainWindow" 
+        ResizeMode="NoResize"
+        AllowsTransparency="True"
+        Height="500" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="14*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel
+            Name="StcPanel"            
+            MouseDown="StcPanel_MouseDown"
+            Background="#0A3140">
+
+            <Grid Width="800">
+                <TextBlock 
+                    VerticalAlignment="Center"
+                    Name="TxbHeaderWindow"
+                    FontWeight="BOld"
+                    Foreground="White"
+                    Margin="10 10 0 0"
+                    Grid.Column="0"
+                    Text="Название окна" 
+                    />
+                <StackPanel Orientation="Horizontal" 
+                            VerticalAlignment="Top"
+                            HorizontalAlignment="Right">
+                    <Button
+                        Name="BtnMin"
+                        Click="BtnMin_Click"
+                        Margin="0 0 10 3"
+                        Style="{StaticResource DefaultButtonStyle}">
+                        <Button.Content>
+                            <Grid>
+                                <StackPanel 
+                                    VerticalAlignment="Bottom">
+                                    <StackPanel
+                                        Width="15"
+                                        Margin="0 10 0 0"
+                                        Background="#0A3140"
+                                        Height="3"
+                                    />
+                                </StackPanel>
+                            </Grid>
+                        </Button.Content>
+                    </Button>
+                    <Button
+                        Name="BtnCloseApplication"
+                        Click="BtnCloseApplication_Click"
+                        FontFamily="Segoi UI"
+                        FontWeight="Bold"
+                        FontSize="13pt"
+                        Background="#A63247"
+                        Foreground="#0A3140"
+                        Content="X"
+                        Margin="0 0 10 3"
+                        Style="{StaticResource DefaultButtonStyle}"                                                
+                        />
+                </StackPanel>
+            </Grid>
+
+        </StackPanel>
+        <StackPanel
+            Grid.Row="1"
+                Orientation="Vertical">
+            <TextBlock 
+                Style="{StaticResource HeaderLoginUser}"
+                Text="Имя пользователя: "
+                />
+            <TextBlock 
+                Style="{StaticResource JustSeeUserLogin}"
+                Text="Проверка логина"
+                Name="TxbNameUser"
+                />
+        </StackPanel>
+       
+    </Grid>
+</Window>

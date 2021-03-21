@@ -1,0 +1,57 @@
+﻿<Page x:Class="application_checker.appDt.PageMainScreen"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:application_checker.appDt"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageMainScreen">
+
+    <Grid>
+        <StackPanel
+            VerticalAlignment="Bottom"
+            Grid.Row="2">
+            <TextBlock 
+                Margin="10 0 0 3"
+                Style="{StaticResource HeaderLoginUser}"
+                Text="Текущие процессы:"/>
+            <DataGrid
+            Height="350"
+            Name="GridListProcess"
+            AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn 
+                    Width="100"
+                    Binding="{Binding Id}"
+                    Header="ID процесса"/>
+                    <DataGridTextColumn 
+                    Binding="{Binding ProcessName}"
+                    Width="*"
+                    Header="Название процесса"/>
+                    <DataGridTextColumn 
+                    Width="*"
+                    Binding="{Binding StartTime}"
+                    Header="Время работы"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <StackPanel 
+                HorizontalAlignment="Right"
+                Orientation="Horizontal">
+                <Button 
+                    Content="Статистика"
+                    BorderThickness="0"
+                    Background="#049DBF"
+                    Foreground="White"
+                    Style="{StaticResource DefaultDataBtn}"/>
+                <Button 
+                    Content="Закрыть"
+                    Background="#A63247"
+                    Foreground="White"
+                    BorderBrush="Transparent"
+                    BorderThickness="0"
+                    Style="{StaticResource DefaultDataBtn}"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
