@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:application_checker"
         mc:Ignorable="d" 
         Title="MainWindow" 
+        WindowStyle="None"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
         Height="500" Width="800">
     <Grid>
         <Grid.RowDefinitions>

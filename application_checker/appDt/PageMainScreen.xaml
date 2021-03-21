@@ -20,6 +20,15 @@
             Height="350"
             Name="GridListProcess"
             AutoGenerateColumns="True">
+                <DataGrid.Resources>
+                    <Style TargetType="DataGridRow">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding StartTime}" Value="{x:Null}">
+                                <Setter Property="Visibility" Value="Collapsed"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.Resources>
                 <DataGrid.Columns>
                     <DataGridTextColumn 
                     Width="100"
@@ -32,9 +41,7 @@
                     <DataGridTextColumn 
                     Width="*"
                     Binding="{Binding StartTime}"
-                    Header="Время работы">
-                    <!--asd-->
-                    </DataGridTextColumn>
+                    Header="Время работы" />
                 </DataGrid.Columns>
             </DataGrid>
             <StackPanel 
