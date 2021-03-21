@@ -1,4 +1,5 @@
 ﻿using application_checker.appCls;
+using application_checker.appDt;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -24,7 +25,6 @@ namespace application_checker
     public partial class MainWindow : Window
     {
         private bool check = false;
-        public Process[] localAll { get; set; }
         private DispatcherTimer timer;
 
         public MainWindow()
@@ -33,6 +33,7 @@ namespace application_checker
             TxbNameUser.Text = Environment.UserName + " / Сборка ОС: " + Environment.Version + " / Версия ОС: " + Environment.OSVersion;
             TxbHeaderWindow.Text = "Checker ENV" + " .::. " + Environment.SystemDirectory;
             DataTimer();
+            NavigationPages.frameMainPage = FrmMainPages;
         }
 
         private void StcPanel_MouseDown(object sender, MouseButtonEventArgs e)
@@ -70,16 +71,14 @@ namespace application_checker
 
         private void DataTimer() {
             timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Interval = TimeSpan.FromSeconds(10);
             timer.Tick += UpdateDataGrid;
             timer.Start();
         }
 
         private void UpdateDataGrid(object sender, EventArgs e)
         {
-            localAll = Process.GetProcesses();
-           
-            GridListProcess.ItemsSource = localAll.GroupBy(x => x.ProcessName).ToList();
+            FrmMainPages.Navigate(new PageMainScreen());                
         }
     }
 }

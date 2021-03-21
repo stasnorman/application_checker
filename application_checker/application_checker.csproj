@@ -68,6 +68,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="appCls\ClassRefresh.cs" />
+    <Compile Include="appCls\NavigationPages.cs" />
+    <Compile Include="appDt\funcDataMainPage\ClassDataUpdate.cs" />
     <Compile Include="appDt\PageMainScreen.xaml.cs">
       <DependentUpon>PageMainScreen.xaml</DependentUpon>
     </Compile>

@@ -83,6 +83,9 @@
                 Name="TxbNameUser"
                 />
         </StackPanel>
-       
+        <Frame 
+            Grid.Row="2"
+            NavigationUIVisibility="Hidden"
+            Name="FrmMainPages"/>
     </Grid>
 </Window>

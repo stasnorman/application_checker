@@ -1,4 +1,5 @@
-﻿using System;
+﻿using application_checker.appDt.funcDataMainPage;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,9 @@ namespace application_checker.appDt
         public PageMainScreen()
         {
             InitializeComponent();
+            ClassDataUpdate classDataUpdate = new ClassDataUpdate();
+            classDataUpdate.LoadDataInGrid(GridListProcess);
         }
+
     }
 }
